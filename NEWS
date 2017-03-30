@@ -1,0 +1,16 @@
+CHANGES IN VERSION 0.1.0
+------------------------
+ o geom_hexagon, geom_pkgname, theme_sticker <2017-03-21, Tue>
+ o use ggimage::geom_subview and ggimage::geom_image <2017-03-21, Tue>
+
+CHANGES IN VERSION 0.0.2
+------------------------
+ o support select font typeface <2017-03-15, Wed>
+   + https://github.com/GuangchuangYu/hexSticker/issues/4
+ o move package name to top layer <2017-03-14, Tue>
+   + https://github.com/GuangchuangYu/hexSticker/issues/3
+
+CHANGES IN VERSION 0.0.1
+------------------------
+ o initial version based on my script to generate ggtree sticker <2017-03-13, Mon>
+   + https://github.com/jotsetung/BioC-stickers/blob/master/ggtree/ggtree_sticker.R
