@@ -2,6 +2,12 @@
 hexSticker: create hexagon sticker in R
 =======================================
 
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hexSticker?color=green)](https://cran.r-project.org/package=hexSticker)
+![](http://cranlogs.r-pkg.org/badges/grand-total/hexSticker?color=green)
+![](http://cranlogs.r-pkg.org/badges/hexSticker?color=green)
+![](http://cranlogs.r-pkg.org/badges/last-week/hexSticker?color=green)
+
+
 Author
 ------
 
@@ -20,8 +26,9 @@ Examples
 
 ``` r
 library(hexSticker)
-sticker(expression(plot(cars, cex=.5, cex.axis=.5, mgp=c(0,.3,0), xlab="", ylab="")), package="hexSticker",
-        p_size=8, s_x=1, s_y=.8, s_width=1.2, s_height=1, filename="inst/figures/baseplot.png")
+sticker(expression(plot(cars, cex=.5, cex.axis=.5, mgp=c(0,.3,0), xlab="", ylab="")),
+        package="hexSticker", p_size=8, s_x=1, s_y=.8, s_width=1.2, s_height=1,
+        filename="inst/figures/baseplot.png")
 ```
 
 <img src="inst/figures/baseplot.png" height="300"/>
@@ -66,17 +73,29 @@ sticker(imgurl, package="hexSticker", p_size=8, s_x=1, s_y=.75, s_width=.6,
 
 <img src="inst/figures/imgfile.png" height="300"/>
 
+------------------------------------------------------------------------
+
 Stickers produced by `hexSticker`
 ---------------------------------
 
 > If you use `hexSticker` and want your sticker to be listed here, please feel free to edit [README.Rmd](https://github.com/GuangchuangYu/hexSticker/edit/master/README.Rmd).
 
--   [AnnotationFilter](https://github.com/Bioconductor/BiocStickers/tree/master/AnnotationFilter)
--   [FamAgg](https://github.com/Bioconductor/BiocStickers/tree/master/FamAgg)
--   [ggtree](https://github.com/Bioconductor/BiocStickers/tree/master/ggtree)
--   [MSnbase](https://github.com/Bioconductor/BiocStickers/tree/master/MSnbase)
--   [mzR](https://github.com/Bioconductor/BiocStickers/tree/master/mzR)
--   [treeio](https://github.com/Bioconductor/BiocStickers/tree/master/treeio)
--   [xcms](https://github.com/Bioconductor/BiocStickers/tree/master/xcms)
+### Stickers for software packages
 
-<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/AnnotationFilter/AnnotationFilter.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/FamAgg/FamAgg.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ggtree/ggtree.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/MSnbase/MSnbase.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/mzR/mzR.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/treeio/treeio.png" height="120"/> <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/xcms/xcms.png" height="120"/>
+<!--
+[<img src="" height="120"/>]()
+-->
+[<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/AnnotationFilter/AnnotationFilter_hl.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/AnnotationFilter) [<img src="https://github.com/Bioconductor/BiocStickers/raw/master/BiocFileCache/BiocFileCache.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/BiocFileCache) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/cleaver/cleaver.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/cleaver) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/FamAgg/FamAgg_hl.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/FamAgg) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/ggtree/ggtree.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/ggtree) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/MSnbase/MSnbase.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/MSnbase) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/mzR/mzR_hl.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/mzR) [<img src="https://raw.githubusercontent.com/ox-it/oidnChaRts/master/data-raw/oidnChaRt-sticker.png" height="120"/>](https://github.com/ox-it/oidnChaRts/tree/master/data-raw) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRoloc.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/pRoloc) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRolocdata.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/pRoloc) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/pRoloc/pRolocGUI.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/pRoloc) [<img src="https://github.com/Tazinho/snakecase/raw/master/man/figures/snakecase05.png" height="120" />](https://github.com/Tazinho/snakecase) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/treeio/treeio.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/treeio) [<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/xcms/xcms_hl.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/xcms) [<img src="https://raw.githubusercontent.com/drisso/zinb_analysis/master/sticker/zinbwave.png" height="120"/>](https://github.com/drisso/zinb_analysis/tree/master/sticker)
+
+### Stickers for events/workshops
+
+[<img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/events/CSAMA/2017/CSAMA2017.png" height="120"/>](https://github.com/Bioconductor/BiocStickers/tree/master/events/CSAMA/2017)
+
+### Stickers for fun
+
+[<img src="https://www.karada-good.net/wp/wp-content/uploads/2017/04/kemono-320x371.png" height="120"/>](https://www.karada-good.net/analyticsr/r-584)
+
+Print/order stickers
+--------------------
+
+Sticker designers can make their stickers available via [Sticker Mule](https://www.stickermule.com).
