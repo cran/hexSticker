@@ -1,8 +1,8 @@
-f2175c9f0b08e316f58967284eec60cd *DESCRIPTION
-c3cb71716cd14c6e8cc79dcf9c47b6a6 *NAMESPACE
+c57ecbc7fab372d2eb9d90cf1f04c127 *DESCRIPTION
+2797eece4e572ebe44fc3c9a54e71081 *NAMESPACE
 b9852dfa6a0792aa2b06ee4ea91ebd91 *NEWS
-ba7e4cca5d7352b6eaeef76cfa91e105 *R/sticker.R
-0855aadde25b30e97712f716ee386ae9 *README.md
+1b4cd0a84c65b8edb60396706ccf1545 *R/sticker.R
+a629a3e66f763d70f5ffd8fcbcd82cbb *README.md
 b073a6f62ee6294644764c258531066a *inst/figures/baseplot.png
 d716f6b87b18ad4b34041ef8547baa77 *inst/figures/ggplot2.png
 343132e40042f301be5710f1273ac380 *inst/figures/imgfile.png
