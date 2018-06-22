@@ -1,8 +1,8 @@
-c57ecbc7fab372d2eb9d90cf1f04c127 *DESCRIPTION
-2797eece4e572ebe44fc3c9a54e71081 *NAMESPACE
+cf39b42131c50e4f0a526a7ff65bad3a *DESCRIPTION
+23b35689dfe3cdd9d6ca009d1bb63e0c *NAMESPACE
 b9852dfa6a0792aa2b06ee4ea91ebd91 *NEWS
-1b4cd0a84c65b8edb60396706ccf1545 *R/sticker.R
-a629a3e66f763d70f5ffd8fcbcd82cbb *README.md
+8645983ba5d3c807b0916b2c2f80de34 *R/sticker.R
+d7d0819b16bc6773055df07408211c60 *README.md
 b073a6f62ee6294644764c258531066a *inst/figures/baseplot.png
 d716f6b87b18ad4b34041ef8547baa77 *inst/figures/ggplot2.png
 343132e40042f301be5710f1273ac380 *inst/figures/imgfile.png
@@ -23,4 +23,4 @@ c8872b4dd7ec43c0e98e4ce8d6cc3a36 *man/reexports.Rd
 2a6d205d2499da1a338aa05ce740b5a0 *man/save_sticker.Rd
 0f544679d4a533011d047b31f15c7701 *man/sticker.Rd
 dcdedaedefffb7fadb71d0713d775ea4 *man/sticker_dev.Rd
-7dcab8d57fe784a7c72657f784bbf159 *man/theme_sticker.Rd
+9c333bf3f1ec4e59f1c9b8a65239e6a0 *man/theme_sticker.Rd
