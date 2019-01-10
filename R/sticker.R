@@ -15,10 +15,10 @@
 ##' @param p_size font size for package name
 ##' @param h_size size for hexagon border
 ##' @param h_fill color to fill hexagon
-##' @param h_color color for hexagon boder
+##' @param h_color color for hexagon border
 ##' @param spotlight whether add spotlight
 ##' @param l_x x position for spotlight
-##' @param l_y y positioin for spotlight
+##' @param l_y y position for spotlight
 ##' @param l_width width for spotlight
 ##' @param l_height height for spotlight
 ##' @param l_alpha maximum alpha for spotlight
@@ -29,6 +29,7 @@
 ##' @param u_family font family for url
 ##' @param u_size text size for url
 ##' @param filename filename to save sticker
+##' @param dpi plot resolution
 ##' @return gg object
 ##' @importFrom ggplot2 ggplot
 ##' @importFrom ggplot2 aes_
@@ -46,7 +47,7 @@ sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
                     h_size=1.2, h_fill="#1881C2", h_color="#87B13F",
                     spotlight=FALSE, l_x=1, l_y=.5, l_width=3, l_height=3, l_alpha=0.4,
                     url = "",  u_x=1, u_y=0.08, u_color="black", u_family="Aller_Rg", u_size=1.5,
-                    filename = paste0(package, ".png")) {
+                    filename = paste0(package, ".png"), dpi = 300) {
 
     hex <- hexagon(size=h_size, fill=h_fill, color=h_color)
     if (inherits(subplot, "character")) {
@@ -63,7 +64,7 @@ sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
 
     sticker <- sticker + geom_url(url, x=u_x, y = u_y, color = u_color, family = u_family, size=u_size)
 
-    save_sticker(filename, sticker)
+    save_sticker(filename, sticker, dpi = dpi)
     invisible(sticker)
 }
 
@@ -159,7 +160,8 @@ load_font <- function(family) {
 ##' @return geom layer
 ##' @export
 ##' @author guangchuang yu
-geom_url <- function(url="www.bioconductor.org", x=1, y=0.08, family="Aller_Rg", size=1.5, color="black", angle=30, hjust=0, ...) {
+geom_url <- function(url="www.bioconductor.org", x=1, y=0.08, family="Aller_Rg",
+                     size=1.5, color="black", angle=30, hjust=0, ...) {
     family <- load_font(family)
     d <- data.frame(x = x,
                     y = y,
@@ -196,7 +198,7 @@ geom_hexagon <- function(size=1.2, fill="#1881C2", color="#87B13F") {
     ##             fill = fill, color = color)
     hexd <- data.frame(x = 1+c(rep(-sqrt(3)/2, 2), 0, rep(sqrt(3)/2, 2), 0),
                        y = 1+c(0.5, -0.5, -1, -0.5, 0.5, 1))
-    hexd <- rbind(hexd, hexd[1, ])                   
+    hexd <- rbind(hexd, hexd[1, ])
     geom_polygon(aes_(x=~x, y=~y), data=hexd,
                  size = size, fill = fill, color = color)
 }
@@ -242,16 +244,17 @@ theme_sticker <- function(size=1.2, ...) {
 ##' @title save_sticker
 ##' @param filename file name
 ##' @param sticker sticker
+##' @param ... additional parameters for ggsave
 ##' @return NULL
 ##' @importFrom ggplot2 ggsave
 ##' @importFrom ggplot2 last_plot
 ##' @export
 ##' @author guangchuang yu
-save_sticker <- function(filename, sticker=last_plot()) {
+save_sticker <- function(filename, sticker=last_plot(), ...) {
     ggsave(sticker, width = 43.9, height = 50.8,
            filename = filename,
            bg = 'transparent',
-           units = "mm")
+           units = "mm", ...)
 }
 
 ##' open dev for sticker
