@@ -35,6 +35,11 @@
 ##' @param filename filename to save sticker
 ##' @param asp aspect ratio, only works if subplot is an image file
 ##' @param dpi plot resolution
+##' @details
+##' The extension given in `filename` determines the graphics device that is
+##' used to render the sticker, e.g. `filename = 'sticker.png'` creates a png file
+##' and `filename = 'sticker.svg'` creates a svg file. For a list of supported
+##' graphics devices please see the documentation of [ggplot2::ggsave()].
 ##' @return gg object
 ##' @importFrom ggplot2 ggplot
 ##' @importFrom ggplot2 aes_
@@ -45,8 +50,10 @@
 ##' library(ggplot2)
 ##' p <- ggplot(aes(x = mpg, y = wt), data = mtcars) + geom_point()
 ##' p <- p + theme_void() + theme_transparent()
-##' sticker(p, package="hexSticker")
-##' @author Guangchuang Yu 
+##' outfile <- tempfile(fileext=".png")
+##' sticker(p, package="hexSticker", filename=outfile)
+##' @author Guangchuang Yu
+##' @md
 sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
                     package, p_x=1, p_y=1.4, p_color="#FFFFFF", p_family="Aller_Rg", p_size=8,
                     h_size=1.2, h_fill="#1881C2", h_color="#87B13F",
@@ -81,6 +88,7 @@ sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
     sticker <- sticker + theme_sticker(size = h_size)
 
     save_sticker(filename, sticker, dpi = dpi)
+    class(sticker) <- c("sticker", class(sticker))
     invisible(sticker)
 }
 
@@ -93,7 +101,7 @@ sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
 # ##' @param color border color of hexagon
 # ##' @return hexagon
 # ##' @export
-# ##' @author guangchuang yu
+# ##' @author Guangchuang Yu
 # hexagon <- function(size=1.2, fill="#1881C2", color="#87B13F") {
 #     ggplot() + geom_hexagon(size=size, fill=fill, color=color) + theme_sticker(size)
 # }
@@ -135,7 +143,7 @@ spotlight <- function(alpha) {
 ##' @return package name layer
 ##' @importFrom ggplot2 geom_text
 ##' @export
-##' @author guangchuang yu
+##' @author Guangchuang Yu
 geom_pkgname <- function(package, x=1, y=1.4, color="#FFFFFF", family="Aller_Rg", size=8, ...) {
     family <- load_font(family)
     d <- data.frame(x = x, y = y,
@@ -152,7 +160,7 @@ load_font <- function(family) {
     ##
     ## google font can be supported via `showtext`,
     ## see https://github.com/GuangchuangYu/hexSticker#google-fonts
-    ## 
+    ##
     if (family == "Aller") {
         family <- "Aller_Rg"
     }
@@ -163,7 +171,7 @@ load_font <- function(family) {
     if (any(i)) {
         font_add(family, fonts[which(i)[1]])
         showtext_auto()
-    } 
+    }
     return(family)
 }
 
@@ -182,7 +190,7 @@ load_font <- function(family) {
 ##' @param ... additional parameters to geom_text
 ##' @return geom layer
 ##' @export
-##' @author guangchuang yu
+##' @author Guangchuang Yu
 geom_url <- function(url="www.bioconductor.org", x=1, y=0.08, family="Aller_Rg",
                      size=1.5, color="black", angle=30, hjust=0, ...) {
     family <- load_font(family)
@@ -211,7 +219,7 @@ geom_url <- function(url="www.bioconductor.org", x=1, y=0.08, family="Aller_Rg",
 ##' @importFrom ggplot2 geom_polygon
 ## @importFrom ggforce geom_circle
 ##' @export
-##' @author guangchuang yu
+##' @author Guangchuang Yu
 geom_hexagon <- function(size=1.2, fill="#1881C2", color="#87B13F") {
     ## center <- 1
     ## radius <- 1
@@ -275,7 +283,7 @@ white_around_hex <- function(size = 1.2) {
 ##' @importFrom ggplot2 margin
 ##' @importFrom ggimage theme_transparent
 ##' @export
-##' @author guangchuang yu
+##' @author Guangchuang Yu
 theme_sticker <- function(size=1.2, ...) {
     center <- 1
     radius <- 1
@@ -306,13 +314,20 @@ theme_sticker <- function(size=1.2, ...) {
 ##' @return NULL
 ##' @importFrom ggplot2 ggsave
 ##' @importFrom ggplot2 last_plot
+##' @importFrom tools file_ext
 ##' @export
-##' @author guangchuang yu
-save_sticker <- function(filename, sticker=last_plot(), ...) {
-    ggsave(sticker, width = 43.9, height = 50.8,
-           filename = filename,
-           bg = 'transparent',
-           units = "mm", ...)
+##' @author Guangchuang Yu
+save_sticker <- function(filename, sticker = last_plot(), ...) {
+    args <- list(filename = filename, plot = sticker, width = 43.9,
+                 height = 50.8, units = "mm", bg = "transparent", ...)
+    is_png <- (!is.null(args$device) && args$device == "png") ||
+              file_ext(filename) == "png"
+    is_win <- .Platform$OS.type == "windows"
+    if (is_png && is_win && capabilities("cairo")) {
+      args$type <- "cairo-png"
+      args$antialias <- "subpixel"
+    }
+    do.call(ggsave, args)
 }
 
 ##' open dev for sticker
@@ -322,7 +337,7 @@ save_sticker <- function(filename, sticker=last_plot(), ...) {
 ##' @return new dev
 ##' @importFrom grDevices dev.new
 ##' @export
-##' @author guangchuang yu
+##' @author Guangchuang Yu
 sticker_dev <- function() {
     # if (!(all.equal(dev.size()[1], sqrt(3)) && all.equal(dev.size()[2], 2)))
     dev.new(width=sqrt(3), height=2, noRStudioGD=TRUE)

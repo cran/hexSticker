@@ -4,8 +4,15 @@
 \alias{geom_pkgname}
 \title{geom_pkgname}
 \usage{
-geom_pkgname(package, x = 1, y = 1.4, color = "#FFFFFF",
-  family = "Aller_Rg", size = 8, ...)
+geom_pkgname(
+  package,
+  x = 1,
+  y = 1.4,
+  color = "#FFFFFF",
+  family = "Aller_Rg",
+  size = 8,
+  ...
+)
 }
 \arguments{
 \item{package}{package name}
@@ -29,5 +36,5 @@ package name layer
 add package name to sticker
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }
