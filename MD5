@@ -1,8 +1,8 @@
-bbc80d418f765105a6e0432ac51669d2 *DESCRIPTION
+206a9c9be0135aa833ab7a91c56efd05 *DESCRIPTION
 45ee74b966b1416d54420ceb25e1b126 *NAMESPACE
-6439a99ee702361931c3e971cc4e72de *NEWS.md
+39353d0f7b4867b0fca6bf39d94e56a5 *NEWS.md
 880ba5c62e9fa28878d171f910aab34e *R/as-raster.R
-ab68a4022a9f34830d87590215e9f2dd *R/sticker.R
+be82c2f39efdbb338c7ad329067708a0 *R/sticker.R
 3ad625f07120d626d0459cc1d4af965d *inst/figures/baseplot.png
 b42c33009684556045984cdf70f48bf4 *inst/figures/cat.png
 31b558676721d7a28a461c3ff4a01753 *inst/figures/ggplot2-google-font.png
@@ -18,10 +18,10 @@ d784daa2c243a5c1379c8e6dab43f208 *inst/fonts/Aller/Aller_Lt.ttf
 8ec0b703a882e82ec244adc34da5a745 *inst/fonts/Aller/Aller_LtIt.ttf
 785388a9e6416c286ec82ff966c696fd *inst/fonts/Aller/Aller_Rg.ttf
 a2ab55a67db2cf61b33cec7c056bb923 *man/geom_hexagon.Rd
-784b42dbedd10eb606009bb43c5a0ef1 *man/geom_pkgname.Rd
+28b4f99f0edadce9e156fde309319bfc *man/geom_pkgname.Rd
 f0c545f36a1f1ccf6854c1ed3ecc4706 *man/geom_url.Rd
 cf2531714e3189f45046990ac9674137 *man/reexports.Rd
 46f2b6c9ecc422b1ff65a2a1e5b142e2 *man/save_sticker.Rd
-92148be98dff4fa22b65cce317210391 *man/sticker.Rd
+7e5ef7b250bd7b554e34832f6125c363 *man/sticker.Rd
 158366701337a80877b244dee9e7ea9d *man/sticker_dev.Rd
 95c24158c48a367b23aedae5230a5681 *man/theme_sticker.Rd
